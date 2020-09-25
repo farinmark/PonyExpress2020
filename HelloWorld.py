@@ -1,8 +1,7 @@
 def Square(a):
     b=list()
-    b.append(a*4)
-    b.append(a*a)
-    b.append(a*(2**(1/2)))
+    b.append(a[0])
+    b.append(a[-1])
     return b
-a=int(input())
+a=list(input())
 print(Square(a))
