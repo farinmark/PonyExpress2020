@@ -24,11 +24,12 @@ def SecondCase():
     except:
         driver.close()
         return "Wrong login or password"
-    time.sleep(10)
+    
     try:
-        element_QuitFromPage = driver.find_element_by_xpath("/html/body/div[1]/section/section[1]/div/div/div[2]/div/button[2]/span/svg")
+        element_QuitFromPage = driver.find_element_by_xpath("/html/body/div[1]/section/section[1]/div/div/div[2]/div/button[2]/span")
         element_QuitFromPage.click()
     except:
+        time.sleep(10)      
         driver.close()
         return "Can't click on Quit buttom"
     driver.close()
