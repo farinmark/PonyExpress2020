@@ -30,8 +30,8 @@ class Rectangle:
             self.dot2 = list_of_dots[2]
             self.dot3 = list_of_dots[1]
             self.dot4 = list_of_dots[3]
-        self.a = ((self.dot1[0] - self.dot2[0]) ** 2 + (self.dot1[1] - self.dot2[1])) ** (1/2)
-        self.b = ((self.dot1[0] - self.dot4[0]) ** 2 + (self.dot1[1] - self.dot4[1])) ** (1/2)
+        self.a = ((self.dot1[0] - self.dot2[0]) ** 2 + (self.dot1[1] - self.dot2[1]) ** 2) ** (1/2)
+        self.b = ((self.dot1[0] - self.dot4[0]) ** 2 + (self.dot1[1] - self.dot4[1]) ** 2) ** (1/2)
     def perimetr(self):
         return 2 * (self.a + self.b)
     def sq(self):
