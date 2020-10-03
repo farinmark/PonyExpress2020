@@ -26,7 +26,8 @@ def SecondCase():
         return "Wrong login or password"
     
     try:
-        element_QuitFromPage = driver.find_element_by_xpath("/html/body/div[1]/section/section[1]/div/div/div[2]/div/button[2]/span")
+        element_QuitFromPage = driver.find_element_by_class_name("bp3-button bp3-minimal")
+        #element_QuitFromPage = driver.find_element_by_xpath("/html/body/div[1]/section/section[1]/div/div/div[2]/div/button[2]/span/svg")
         element_QuitFromPage.click()
     except:
         time.sleep(10)      
