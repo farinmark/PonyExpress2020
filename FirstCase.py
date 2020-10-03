@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import time
 
 def FirstCase():
     driver_path = r'C:\Users\User\Desktop\python\chromedriver.exe'
@@ -16,11 +17,15 @@ def FirstCase():
     element_password.send_keys("rg#P5hZm4F")
     element_buttom.click()
 
+    time.sleep(5)
+    
     try:
         element_menuButtom = driver.find_element_by_class_name("bp3-button-text")
     except:
+        driver.close()
         return "Wrong login or password"
     try:
         element_Wrong = driver.find_element_by_class_name("css-hnp1e7")
     except:
+        driver.close()
         return "Success"
