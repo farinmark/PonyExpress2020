@@ -203,7 +203,7 @@ def sixth_case(driver_path, Login, Password):
         return driver
 
     element_servise_button = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '/html/body/div[4]/div/div/div/div[2]/ul/li[7]/span/span/a/div')))
+        EC.presence_of_element_located((By.XPATH, '//html/body/div[3]/div/div/div/div[2]/ul/li[7]/span/span/a/div')))
 
     element_servise_button.click()
 
@@ -233,8 +233,8 @@ def sixth_case(driver_path, Login, Password):
 
     try:
         element_create_group_button = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH,
-                                            '/html/body/div[1]/section/section[2]/section/section/div/div/div[1]/div[1]/button[1]/span[2]')))
+            EC.element_to_be_clickable((By.XPATH,
+                                            '/html/body/div[1]/section/section[2]/section/section/div/div/div[1]/div[1]/button[1]')))
     except:
         print("No page after group of users button click")
         driver.close()
@@ -245,8 +245,8 @@ def sixth_case(driver_path, Login, Password):
     element_create_group_button.click()
     try:
         element_create_group_name_field = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH,
-                                            '/html/body/div[3]/div/div[2]/div/div[1]/h4/span')))
+            EC.visibility_of_element_located((By.XPATH,
+                                            '/html/body/div[3]/div/div[2]/div/div[2]/form/div[1]/div/div/input')))
     except:
         print("No create group window")
         driver.close()
@@ -254,18 +254,18 @@ def sixth_case(driver_path, Login, Password):
 
     element_create_group_name_field.send_keys(Password)
     element_save_group_name_button = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH,'/html/body/div[3]/div/div[2]/div/div[2]/form/div[2]/button[1]/span')))
+        EC.visibility_of_element_located((By.XPATH,'/html/body/div[3]/div/div[2]/div/div[2]/form/div[2]/button[1]/span')))
     element_save_group_name_button.click()
     try:
         element_search_field = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH,'/html/body/div[1]/section/section[2]/section/section/div/div/div[1]/div[2]/div/div/div/input')))
+            EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/section/section[2]/section/section/div/div/div[1]/div[2]/div/div/div/input')))
     except:
         print("Save group button wasn't cliked")
         driver.close()
         return "FAIL ON STAGE: Click on save group button"
     element_search_field.send_keys(Password)
     element_page_counter =  WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH,'/html/body/div[1]/section/section[2]/section/section/div/div/div[2]/div[2]/div[1]/span/strong')))
+            EC.visibility_of_element_located((By.XPATH,'/html/body/div[1]/section/section[2]/section/section/div/div/div[2]/div[2]/div[1]/span/strong')))
     Page_counter = element_page_counter.text
     if Page_counter == "1 из 1":
         print("Group create success")
@@ -282,4 +282,4 @@ if __name__ == "__main__":
     Login = "ext.mgu_education"
     Password = "rg#P5hZm4F"
     driver_path = r'C:\Users\User\Desktop\python\chromedriver.exe'
-    print(sixth_case(driver_path, Login, Password))
+    sixth_case(driver_path, Login, Password)
