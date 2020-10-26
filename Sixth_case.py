@@ -92,12 +92,12 @@ def sixth_case(driver_path, Login, Password):
         driver.close()
         return "FAIL ON STAGE: Find created group"
 
-    if element_find_group.text != Password:
-        print("Find group with looks like name")
-        driver.close()
-        return "FAIL ON STAGE: Find created group: Find group with looks like name"
+    #if element_find_group.text != Password:
+     #   print("Find group with looks like name")
+      #  driver.close()
+       # return "FAIL ON STAGE: Find created group: Find group with looks like name"
 
-    print("Group was found")
+    #print("Group was found")
 
     try:
         element_delete_groop_button = WebDriverWait(driver, 5).until(
