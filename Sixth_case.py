@@ -50,6 +50,7 @@ def sixth_case(driver_path, Login, Password):
         return "FAIL ON STAGE: Click group of users button button"
 
     print("Group of users click")
+    time.sleep(5)
 
     element_create_group_button.click()
 
