@@ -7,8 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from Authorization import authorization_in_pony
 from Menu_button_click import menu_button_click
 
-def sixth_case(driver_path, Login, Password):
-    driver = menu_button_click(driver_path, Login, Password)
+def sixth_case():
+    Password = "Test group name"
+    driver = menu_button_click()
     if driver == "FAIL ON STAGE: Wrong login or password" or driver == "No such input fields" or driver == "FAIL ON STAGE: Open page" or driver == "FAIL ON STAGE: Click menu button":
         return driver
 

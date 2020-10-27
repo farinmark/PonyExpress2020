@@ -5,9 +5,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Authorization import pony_driver_init
+import Pathes
 
-def third_case(driver_path, Login, Password):
-    driver = pony_driver_init(driver_path)
+def third_case():
+    driver = pony_driver_init()
+    Login = Pathes.Login
+    Password = "Wrong password"
     if driver == "Page wasn't open":
         return "FAIL ON STAGE: Open page"
     try:

@@ -7,8 +7,10 @@ from Pathes import driver_path
 from Pathes import Login
 from Pathes import Password
 import test_case_6
-
+from Authorization import authorization_in_pony
+from Eighth_case import eighth_case
+import test_case_8
 
 if __name__ == "__main__":
-    sixth_case(driver_path, Login, Password)
-    #test_case_6.case_6()
+    eighth_case()
+    #test_case_8.case_8()

@@ -6,8 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import Authorization
 
-def menu_button_click(driver_path, Login, Password):
-    driver = Authorization.authorization_in_pony(driver_path, Login, Password)
+def menu_button_click():
+    driver = Authorization.authorization_in_pony()
     if driver == "FAIL ON STAGE: Wrong login or password" or driver == "No such input fields" or driver == "FAIL ON STAGE: Open page":
         return driver
     else:

@@ -4,8 +4,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import Pathes
 
-def pony_driver_init(driver_path):
+def pony_driver_init():
+    driver_path = Pathes.driver_path
     pegas_url = 'http://pegasus-edu.pegasus.ponyex.local/'
     driver = webdriver.Chrome(executable_path=driver_path)
     driver.get(pegas_url)
@@ -19,8 +21,10 @@ def pony_driver_init(driver_path):
     time.sleep(5)
     return driver
 
-def authorization_in_pony(driver_path, Login, Password):
-    driver = pony_driver_init(driver_path)
+def authorization_in_pony():
+    Login = Pathes.Login
+    Password = Pathes.Password
+    driver = pony_driver_init()
     if driver == "Page wasn't open":
         return "FAIL ON STAGE: Open page"
     try:
