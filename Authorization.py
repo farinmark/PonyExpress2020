@@ -18,7 +18,6 @@ def pony_driver_init():
         driver.close()
         return "Page wasn't open"
     print("Page was opened")
-    time.sleep(5)
     return driver
 
 def authorization_in_pony():
@@ -43,7 +42,6 @@ def authorization_in_pony():
         EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/section/form/button')))
     element_buttom.click()
 
-    time.sleep(5)
 
     try:
         element_menu_button = WebDriverWait(driver, 10).until(
