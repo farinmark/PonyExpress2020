@@ -1,16 +1,18 @@
-from First_case import first_case
-from Fifth_case import fifth_case
-from Second_case import second_case
-from Third_case import third_case
-from Sixth_case import sixth_case
+from test_case_1 import first_case
+from test_case_5 import fifth_case
+from test_case_2 import second_case
+from test_case_3 import third_case
+from test_case_6 import sixth_case
 from Pathes import driver_path
 from Pathes import Login
 from Pathes import Password
-import test_case_6
 from Authorization import authorization_in_pony
-from Eighth_case import eighth_case
-import test_case_8
+from test_case_8 import eighth_case
+from test_case_9 import ninth_case
+from test_case_10 import tenth_case
+from test_case_13 import test_case_13
+from test_case_14 import test_case_14
+from test_case_15 import test_case_15
 
 if __name__ == "__main__":
-    eighth_case()
-    #test_case_8.case_8()
+    test_case_15()
