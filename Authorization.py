@@ -6,6 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import Pathes
 from log_out import Print
+import requests
+import json
 
 
 def pony_driver_init():
@@ -54,3 +56,22 @@ def authorization_in_pony():
         return "FAIL ON STAGE: Wrong login or password"
     Print("Success authorization")
     return driver
+
+def authorization_r():
+    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    data = {'username': Pathes.Login,
+            'password': Pathes.Password,
+            'grant_type': 'password',
+            'scope': 'pegasus',
+            'client_id': 'pegasus-v2',
+            'client_secret': 'secret'}
+
+    url = "http://srv-pnew-01-test:1001/auth/connect/token"
+    try:
+        r = requests.post(url, data=data, headers=headers)
+    except:
+        Print('Authorization failed')
+        return -1
+    Print('Authorization successful')
+    answer = json.loads(r.text)
+    return (answer["access_token"])
