@@ -15,20 +15,23 @@ from log_out import Print
 '''
 
 def request_3():
-    Print('request 3')
+    Print('Request 3')
 
     token = authorization_r()
 
     if token == -1:
+        Print('Request 3 failed')
         return -1
 
     r = get_couriers(token, 1, 5, 0, 'Максим')
 
     if r == -1:
+        Print('Request 3 failed')
         return -1
 
     if r['result']['count'] != 5:
         Print('Didnt find 5 couriers who named Maxim')
+        Print('Request 3 failed')
         return -1
 
     Print('Find 5 couriers who named Maxim')
@@ -37,6 +40,7 @@ def request_3():
     for courier in couriers_list:
         if courier['firstName'] != 'Максим':
             Print('Courier is not Maxim')
+            Print('Request 3 failed')
             return -1
 
     Print('Every courier is Maxim ')

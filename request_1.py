@@ -12,14 +12,14 @@ from get_request import get_request
 '''
 
 def request_1():
-    Print('request 1')
+    Print('Request 1')
     token = Authorization.authorization_r()
     if token == -1:
         return -1
     Print('Request was sent')
     r = get_request(token, 0, '/api/v1/configurations/get-all')
     if r == -1 or r.status_code != 200:
-        Print("request 1 failed")
+        Print("Request 1 failed")
         return -1
     Print('Success')
     return "Success"

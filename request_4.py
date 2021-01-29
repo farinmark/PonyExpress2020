@@ -16,16 +16,18 @@ from condition_parametrs import codes as right_codes
 '''
 
 def request_4():
-    Print('request 4')
+    Print('Request 4')
 
     token = authorization_r()
 
     if token == -1:
+        Print('Request 4 failed')
         return -1
 
     r = get_condition_parameters(token)
 
     if r == -1:
+        Print('Request 4 failed')
         return -1
 
     code_list = r['result']
@@ -37,7 +39,7 @@ def request_4():
 
     if len(now_codes) != len(right_codes):
         Print('Number of condition params diff of expected')
-        Print('Тест 4 не пройден')
+        Print('Request 4 failed')
         return -1
 
     Print('Number of condition params didnt diff of expected')
@@ -45,6 +47,7 @@ def request_4():
     for code in now_codes:
         if not code in right_codes:
             Print('Condition params diff of expected')
+            Print('Request 4 failed')
             return -1
 
     Print('Condition params didnt diff of expected')

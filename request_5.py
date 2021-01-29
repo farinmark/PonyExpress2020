@@ -26,20 +26,23 @@ import datetime
 '''
 
 def request_5():
-    Print('request 5')
+    Print('Request 5')
 
     token = authorization_r()
 
     if token == -1:
+        Print('Request 5 failed')
         return -1
 
     r = get_all_groups(token)
 
     if r == -1:
-        return
+        Print('Request 5 failed')
+        return -1
 
     if r['result'] == None:
         Print('Cant find groups')
+        Print('Request 5 failed')
         return -1
 
     Print('Get all groups of users')
@@ -50,12 +53,14 @@ def request_5():
     for group in r['result']:
         if group['displayName'] == name:
             Print('Group with name: ' + name + 'already exist')
+            Print('Request 5 failed')
             return -1
 
     r = create_group(token, name)
 
     if r['result'] == None:
         Print('Cant create group')
+        Print('Request 5 failed')
         return -1
 
     id = r['result']['id']
@@ -63,10 +68,12 @@ def request_5():
     r = get_all_groups(token)
 
     if r == -1:
+        Print('Request 5 failed')
         return -1
 
     if r['result'] == None:
         Print('Cant find groups')
+        Print('Request 5 failed')
         return -1
 
     exists = 0
@@ -77,22 +84,26 @@ def request_5():
 
     if not exists:
         Print('Cant find created group')
+        Print('Request 5 failed')
         return -1
 
-    Print('Finded created group with name: ' + name + ' и id: ' + id)
+    Print('Found created group with name: ' + name + ' и id: ' + id)
 
     r = delete_group(token, id)
 
     if r == -1:
+        Print('Request 5 failed')
         return -1
 
     r = get_all_groups(token)
 
     if r == -1:
+        Print('Request 5 failed')
         return -1
 
     if r['result'] == None:
         Print('Cant find group')
+        Print('Request 5 failed')
         return -1
 
     exists = 0
@@ -102,7 +113,8 @@ def request_5():
             exists = 1
 
     if exists:
-        Print('Group wasnt deleted')
+        Print('Group wasn\'t deleted')
+        Print('Request 5 failed')
         return -1
 
     Print('Group was deleted')

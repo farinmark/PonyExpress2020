@@ -19,3 +19,5 @@ urls = [
     'http://warehouses-backend-edu.pegasus.ponyex.local/',      #12
     'http://waybills-backend-edu.pegasus.ponyex.local/'         #13
 ]
+
+destinationPointId_1202 = "4110acc0-137f-4fe6-bf69-50ee2590ded4" # Id точки назначения 1202
